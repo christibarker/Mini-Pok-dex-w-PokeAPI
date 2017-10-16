@@ -1,34 +1,32 @@
-//what runs on the page when its opened
+// what runs on the page when its opened
 
-// $(function() {
+$(function() {
+	var pokeDex = new PokeDex();
 
-// }):
+	$('.pokemon').click(function() {
 
-//function for api
+		pokeDex.showDetails(name);
+	});
 
-// $(function () {
-// 	cachedFetch(url)
-// 	 .then(r => r.json()) 
-// 	 .then(res => { 
-// 	 	console.log(results);
-// 	 	//your code here where res is the json response with your pokemon data 
-// 	//  	var pokeDex = results.
-// 	});
-	 
-// }); 
+});
+
 
 class PokeDex {
 	constructor() {
-		this.pokemon = []
-	}
+		this.pokemon = [];
+	};
 
 	showDetails() {
-
+		cachedFetch(`http://pokeapi.co/api/v1/pokedex/1/${'name'}`)
+	 	.then(r => r.json())
+	 	.then(res => { 
+		 	console.log(res);
+		 });
 	};
 
 	favorite() {
 
-	}
+	};
 };
 
 class Pokemon {
@@ -40,14 +38,20 @@ class Pokemon {
 	this.id = id;
 	this.height = height;
 	}
-}
-
-var pokeDex = new PokeDex();
+};
 
 
-	cachedFetch(url)
-	 .then(r => r.json()) 
-	 .then(res => { 
-	 	console.log(results);
 
 
+//function for api
+
+// $(function () {
+	// cachedFetch(`http://pokeapi.co/api/v2/ability/110/`)
+	//  .then(r => r.json()) 
+	//  .then(res => { 
+	//  	console.log(res);
+	//  	//your code here where res is the json response with your pokemon data 
+	// //  	var pokeDex = results.
+	// });
+	 
+// }); 

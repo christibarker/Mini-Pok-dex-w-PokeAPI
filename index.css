@@ -1,0 +1,18 @@
+body {
+	background: red;
+}
+
+#sub_background {
+	background: lightgray;
+	height: 600px;
+	width: 475px;
+	float: left;
+}
+
+#right_background {
+	background: lightgray;
+	float: right;
+	height: 600px;
+	width: 475px;
+
+}
