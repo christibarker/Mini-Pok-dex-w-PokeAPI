@@ -8,6 +8,7 @@ body {
 	height: 450px;
 	width: 475px;
 	float: left;
+
 }
 
 #right_background {
@@ -28,8 +29,11 @@ body {
 
 }
 
-.pokemon:focus {
+.child-pokemon:hover {
   color: yellow;
+}
+.child-pokemon:visited {
+  text-decoration: underline;
 }
 
 .favorite_box {

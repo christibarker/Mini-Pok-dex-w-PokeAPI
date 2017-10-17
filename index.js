@@ -46,23 +46,45 @@ class PokeDex {
 
 //create a way to favorite them. create an arry like album push favorites to array
 // favorite() {
-// 		$('#favorite').click(function(){
 
-// 		});
-// 	};
+// class favorite {
+// 	constructor(){
+// 		this.fav = []; 
+// 	}
+	
+// 	addFav(fav) {
+// 		this.fav.push(fav);
+// 	}
 
-	// $('.element').html(newHTML.join(''));
-// get their specs
-
-// class Pokemon {
-// 	constructor(sprite,name,weight,types,id,height) {
-// 	$(this).sprite = abilities.sprites;
-// 	$(this).name = abilities.name;
-// 	$(this).weight = abilities.weight;
-// 	$(this).types = abilities.types;
-// 	$(this).id = abilities.national_id;
-// 	$(this).height = abilities.height;
+// 	removeFav(name) {
+// 		for (var i = 0; i < this.book.length; i++) {
+// 			if (this.fav[i].name === name) {
+// 				this.name.splice(i, 1);
+// 			}
 // 	}
 // };
+
+// create a click event that adds pokemon to favorite list
+// great and else if the click out
+
+
+// $('#favorite').click(function(){
+// 	var favorite = [];
+// 	if () {
+// 		alert('you have added a favorite')
+// 	} else {
+// 		alert('you removed from favorites')
+// 	}
+// 	$('#favorite').html(favorite);
+// })
+
+
+
+
+
+
+
+
+
 
 
