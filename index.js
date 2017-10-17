@@ -12,15 +12,13 @@ $(function() {
 	$.each(pokemonArray, function(index, value) {
 	    newHTML.push('<div data-name="' + value + '" class="child-pokemon">' + value + '</div>');
 	});
-	// $('.element').html(newHTML.join(''));
-	// $('.pokemon')
 	$('.pokemon').html(newHTML);
 
 	//click on name get info
 
-	$('.pokemon').click(function() {
-		newHTML = '.pokemon';
-		pokeDex.showDetails(newHTML);
+	$('.child-pokemon').click(function() {
+		var name = $(this).data('name');//get data name
+		pokeDex.showDetails(name);
 	});
 
 });
@@ -31,61 +29,35 @@ class PokeDex {
 		//$(this).pokemon-array = pokemonArray;
 	};
 
-	showDetails() {
-		cachedFetch(`http://pokeapi.co/api/v1/pokemon/${'#'}`)
+	showDetails(name) {
+		cachedFetch(`https://pokeapi.co/api/v2/pokemon/${name}`)
 	 	.then(r => r.json())
-	 	.then(res => { 
-		 	console.log(res);
-
-		// $('.pokemon').html(newHTML);
+	 	.then(results => { 
+	 		console.log(results);
+			// $('.pokeData').text(results);
 		 });
-	};
-//create a way to favorite them
-	favorite() {
-
-	};
+	};	
 };
 
+//create a way to favorite them
+// favorite() {
+// 		$('#favorite').click(function(){
+
+// 		});
+// 	};
+
+	// $('.element').html(newHTML.join(''));
 // get their specs
 
-class Pokemon {
-	constructor(sprite,name,weight,types,id,height) {
-	$(this).sprite = abilities.sprites;
-	$(this).name = abilities.name;
-	$(this).weight = abilities.weight;
-	$(this).types = abilities.types;
-	$(this).id = abilities.national_id;
-	$(this).height = abilities.height;
-	}
-};
+// class Pokemon {
+// 	constructor(sprite,name,weight,types,id,height) {
+// 	$(this).sprite = abilities.sprites;
+// 	$(this).name = abilities.name;
+// 	$(this).weight = abilities.weight;
+// 	$(this).types = abilities.types;
+// 	$(this).id = abilities.national_id;
+// 	$(this).height = abilities.height;
+// 	}
+// };
 
 
-//get the names of pokemon and diplay them in html
-
-// var pokemon = document.setAttribute(src)['pokemon-array[0]'];
-// for(i = 0; i < pokemon.length; i++)
-// {
-//  innerHTML(pokemon[i].value);
-
-// }
-
-	// cachedFetch(`http://pokeapi.co/api/v1/pokedex/1/${'name'}`)
-
-//function for api
-
-// $(function () {
-	// cachedFetch(`http://pokeapi.co/api/v1/pokemon/1/`)
-	//  .then(r => r.json()) 
-	//  .then(res => { 
-	//  	console.log(res);
-	//  	var info = res.abilities;
-	//  	for (var i = 0; i < info.length; i++) {
-	// 			$('#info').append(`
-	// 				<img data-count="${i}" src="${info[i]}" />
-	// 			`);			
-	// 		}
-// 	 	//your code here where res is the json response with your pokemon data 
-// 	//  	var pokeDex = results.
-	// });
-	 
-// });

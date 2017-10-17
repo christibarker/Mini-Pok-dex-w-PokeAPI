@@ -3,9 +3,9 @@ body {
 	background: red;
 }
 
-#sub_background {
+#left_background {
 	background: lightgray;
-	height: 600px;
+	height: 450px;
 	width: 475px;
 	float: left;
 }
@@ -13,7 +13,7 @@ body {
 #right_background {
 	background: lightgray;
 	float: right;
-	height: 600px;
+	height: 450px;
 	width: 475px;
 
 }
@@ -22,8 +22,9 @@ body {
 
 .pokemon {
 	display: inline-block;
-	height: 600px;
-	width: auto;
+	height: 445px;
+	width: 465px;
 	overflow: scroll;
-	
+
 }
+
