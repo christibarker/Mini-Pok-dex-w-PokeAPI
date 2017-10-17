@@ -1,4 +1,5 @@
 // what runs on the page when its opened
+//be able to click on the name and get the pokemon info diplayed on the right side on screen
 
 $(function() {
 	var pokeDex = new PokeDex();
@@ -10,17 +11,23 @@ $(function() {
 
 });
 
-
+//creates a functionality similar to jukebox
 class PokeDex {
 	constructor() {
-		this.pokemon = [];
+		$(this).pokemon-array = [];
 	};
 
 	showDetails() {
-		cachedFetch(`http://pokeapi.co/api/v1/pokedex/1/${'name'}`)
+		cachedFetch(`http://pokeapi.co/api/v1/api/v1/pokemon/1/`)
 	 	.then(r => r.json())
 	 	.then(res => { 
 		 	console.log(res);
+		 	//need to get info then sort info 
+		 // 	for (var i = 0; i < images.length; i++) {
+			// 	$('#images').append(`
+			// 		<img data-count="${i}" src="${images[i]}" />
+			// 	`);			
+			// }	
 		 });
 	};
 
@@ -29,9 +36,11 @@ class PokeDex {
 	};
 };
 
+get their specs
+
 class Pokemon {
 	constructor(sprite,name,weight,types,id,height) {
-	this.sprites = sprites;
+	this.sprite = sprite;
 	this.name = name;
 	this.weight = weight;
 	this.types = types;
@@ -41,17 +50,26 @@ class Pokemon {
 };
 
 
+//get the names of pokemon and diplay them in html
 
+// var pokemon = document.setAttribute(src)['pokemon-array[0]'];
+// for(i = 0; i < pokemon.length; i++)
+// {
+//  innerHTML(pokemon[i].value);
+
+// }
+
+	// cachedFetch(`http://pokeapi.co/api/v1/pokedex/1/${'name'}`)
 
 //function for api
 
 // $(function () {
-	// cachedFetch(`http://pokeapi.co/api/v2/ability/110/`)
-	//  .then(r => r.json()) 
-	//  .then(res => { 
-	//  	console.log(res);
-	//  	//your code here where res is the json response with your pokemon data 
-	// //  	var pokeDex = results.
-	// });
+// 	cachedFetch(`http://pokeapi.co/api/v1/pokemon/1/`)
+// 	 .then(r => r.json()) 
+// 	 .then(res => { 
+// 	 	console.log(res);
+// 	 	//your code here where res is the json response with your pokemon data 
+// 	//  	var pokeDex = results.
+// 	});
 	 
-// }); 
+// });
