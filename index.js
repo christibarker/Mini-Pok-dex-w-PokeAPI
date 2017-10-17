@@ -2,11 +2,25 @@
 //be able to click on the name and get the pokemon info diplayed on the right side on screen
 
 $(function() {
+
 	var pokeDex = new PokeDex();
 
-	$('.pokemon').click(function() {
+ // to access the array and list the name
+ 	// build the list of pokemon
 
-		pokeDex.showDetails(name);
+	var newHTML = [];
+	$.each(pokemonArray, function(index, value) {
+	    newHTML.push('<div data-name="' + value + '" class="child-pokemon">' + value + '</div>');
+	});
+	// $('.element').html(newHTML.join(''));
+	// $('.pokemon')
+	$('.pokemon').html(newHTML);
+
+	//click on name get info
+
+	$('.pokemon').click(function() {
+		newHTML = '.pokemon';
+		pokeDex.showDetails(newHTML);
 	});
 
 });
@@ -14,38 +28,34 @@ $(function() {
 //creates a functionality similar to jukebox
 class PokeDex {
 	constructor() {
-		$(this).pokemon-array = [];
+		//$(this).pokemon-array = pokemonArray;
 	};
 
 	showDetails() {
-		cachedFetch(`http://pokeapi.co/api/v1/api/v1/pokemon/1/`)
+		cachedFetch(`http://pokeapi.co/api/v1/pokemon/${'#'}`)
 	 	.then(r => r.json())
 	 	.then(res => { 
 		 	console.log(res);
-		 	//need to get info then sort info 
-		 // 	for (var i = 0; i < images.length; i++) {
-			// 	$('#images').append(`
-			// 		<img data-count="${i}" src="${images[i]}" />
-			// 	`);			
-			// }	
+
+		// $('.pokemon').html(newHTML);
 		 });
 	};
-
+//create a way to favorite them
 	favorite() {
 
 	};
 };
 
-get their specs
+// get their specs
 
 class Pokemon {
 	constructor(sprite,name,weight,types,id,height) {
-	this.sprite = sprite;
-	this.name = name;
-	this.weight = weight;
-	this.types = types;
-	this.id = id;
-	this.height = height;
+	$(this).sprite = abilities.sprites;
+	$(this).name = abilities.name;
+	$(this).weight = abilities.weight;
+	$(this).types = abilities.types;
+	$(this).id = abilities.national_id;
+	$(this).height = abilities.height;
 	}
 };
 
@@ -64,12 +74,18 @@ class Pokemon {
 //function for api
 
 // $(function () {
-// 	cachedFetch(`http://pokeapi.co/api/v1/pokemon/1/`)
-// 	 .then(r => r.json()) 
-// 	 .then(res => { 
-// 	 	console.log(res);
+	// cachedFetch(`http://pokeapi.co/api/v1/pokemon/1/`)
+	//  .then(r => r.json()) 
+	//  .then(res => { 
+	//  	console.log(res);
+	//  	var info = res.abilities;
+	//  	for (var i = 0; i < info.length; i++) {
+	// 			$('#info').append(`
+	// 				<img data-count="${i}" src="${info[i]}" />
+	// 			`);			
+	// 		}
 // 	 	//your code here where res is the json response with your pokemon data 
 // 	//  	var pokeDex = results.
-// 	});
+	// });
 	 
 // });
