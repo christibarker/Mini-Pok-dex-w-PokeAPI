@@ -28,3 +28,11 @@ body {
 
 }
 
+.pokemon:focus {
+  color: yellow;
+}
+
+.favorite_box {
+	position: relative;
+	margin-top: 45%;
+}

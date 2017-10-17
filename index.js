@@ -34,12 +34,17 @@ class PokeDex {
 	 	.then(r => r.json())
 	 	.then(results => { 
 	 		console.log(results);
-			// $('.pokeData').text(results);
+			$('#name').text(results.name);
+			$('#id').text(results.id);
+			$('#weight').text(results.weight);
+			$('#types').text(results.types);
+			$('#height').text(results.height);
+			$('#sprites').text(results.sprites);
 		 });
 	};	
 };
 
-//create a way to favorite them
+//create a way to favorite them. create an arry like album push favorites to array
 // favorite() {
 // 		$('#favorite').click(function(){
 
