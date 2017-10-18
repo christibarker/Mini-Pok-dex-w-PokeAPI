@@ -37,9 +37,11 @@ class PokeDex {
 			$('#name').text(results.name);
 			$('#id').text(results.id);
 			$('#weight').text(results.weight);
-			$('#types').text(results.types);
 			$('#height').text(results.height);
-			$('#sprites').text(results.sprites);
+			$('#sprites').html('<img src="' + results.sprites.front_default + '"></img>');
+		 	$('#types').text(results.types.map(function(value, i) {
+				return value.type.name;
+			}));
 		 });
 	};
 
@@ -56,10 +58,9 @@ class PokeDex {
 	}	
 };
 
-//create a way to favorite them. create an arry like album push favorites to array
-
+ 
 // create a click event that adds pokemon to favorite list
-
+// var pokeDex = new PokeDex();
 
 $(function () {
 	$('#favorite').on('click', function() {
