@@ -21,7 +21,21 @@ $(function() {
 		pokeDex.showDetails(name);
 	});
 
+	$('#favorite').on('click', function() {
+		if (pokeDex.addFav(name)){
+			$('#favorite').html(favorite_box);
+		}
+	});
+
+	$('#unfavorite').on('click', function() {
+		if (pokeDex.removeFav(name)){
+			$('#unfavorite').html(favorite_box);	
+		}	
+	});
+
 });
+
+
 
 //creates a functionality similar to jukebox
 class PokeDex {
@@ -46,32 +60,29 @@ class PokeDex {
 	};
 
 	addFav(name) {
-		this.fav.push('<div id="favorite_box"' + name + '</div>');
+		this.fav.push(name);
+		this.displayFavs();
 	}
 
 	removeFav(name) {
 		for (var i = 0; i < this.fav.length; i++) {
 			if (this.fav[i].name === name) {
 				this.name.splice(i, 1);
-			}
+			}				
 		}
+		this.displayFavs();
 	}	
+
+	// displayFavs(){
+
+	// }
+
 };
 
  
 // create a click event that adds pokemon to favorite list
 // var pokeDex = new PokeDex();
 
-$(function() {
-	$('#favorite').on('click', function() {
-		if (pokeDex.addFav(name)){
-			$('#favorite').html(favorite_box);
-		} else {
-			pokeDex.removeFav(name);
-		}
-	});
-});
-	
 
 
 
