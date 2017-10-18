@@ -26,7 +26,7 @@ $(function() {
 //creates a functionality similar to jukebox
 class PokeDex {
 	constructor() {
-		//$(this).pokemon-array = pokemonArray;
+		this.fav = []; 
 	};
 
 	showDetails(name) {
@@ -41,42 +41,35 @@ class PokeDex {
 			$('#height').text(results.height);
 			$('#sprites').text(results.sprites);
 		 });
-	};	
+	};
+
+	addFav(name) {
+		this.fav.push('<div id="favorite_box"' + name + '</div>');
+	}
+
+	removeFav(name) {
+		for (var i = 0; i < this.fav.length; i++) {
+			if (this.fav[i].name === name) {
+				this.name.splice(i, 1);
+			}
+		}
+	}	
 };
 
 //create a way to favorite them. create an arry like album push favorites to array
-// favorite() {
-
-// class favorite {
-// 	constructor(){
-// 		this.fav = []; 
-// 	}
-	
-// 	addFav(fav) {
-// 		this.fav.push(fav);
-// 	}
-
-// 	removeFav(name) {
-// 		for (var i = 0; i < this.book.length; i++) {
-// 			if (this.fav[i].name === name) {
-// 				this.name.splice(i, 1);
-// 			}
-// 	}
-// };
 
 // create a click event that adds pokemon to favorite list
-// great and else if the click out
 
 
-// $('#favorite').click(function(){
-// 	var favorite = [];
-// 	if () {
-// 		alert('you have added a favorite')
-// 	} else {
-// 		alert('you removed from favorites')
-// 	}
-// 	$('#favorite').html(favorite);
-// })
+$(function () {
+	$('#favorite').on('click', function() {
+		if (){
+			$('#favorite').html(favorite_box);
+		}
+	});
+});
+	
+
 
 
 

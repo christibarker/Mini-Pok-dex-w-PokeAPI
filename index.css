@@ -8,6 +8,7 @@ body {
 	height: 450px;
 	width: 475px;
 	float: left;
+	border-radius: 15px;
 
 }
 
@@ -16,6 +17,7 @@ body {
 	float: right;
 	height: 450px;
 	width: 475px;
+	border-radius: 15px;
 
 }
 
@@ -23,9 +25,11 @@ body {
 
 .pokemon {
 	display: inline-block;
-	height: 445px;
+	height: 440px;
 	width: 465px;
 	overflow: scroll;
+	border-radius: 15px;
+
 
 }
 
@@ -38,5 +42,5 @@ body {
 
 .favorite_box {
 	position: relative;
-	margin-top: 45%;
+	margin-top: 20%;
 }
