@@ -63,8 +63,10 @@ class PokeDex {
 
 $(function () {
 	$('#favorite').on('click', function() {
-		if (){
+		if (pokeDex.addFav(name)){
 			$('#favorite').html(favorite_box);
+		} else {
+			pokeDex.removeFav(name);
 		}
 	});
 });
