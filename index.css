@@ -29,15 +29,13 @@ body {
 	width: 465px;
 	overflow: scroll;
 	border-radius: 15px;
-
-
 }
 
 .child-pokemon:hover {
-  color: yellow;
+ 	 color: yellow;
 }
 .child-pokemon:visited {
-  text-decoration: underline;
+  	text-decoration: underline;
 }
 
 .favorite_box {
