@@ -39,7 +39,7 @@ class PokeDex {
 			$('#weight').text(results.weight);
 			$('#height').text(results.height);
 			$('#sprites').html('<img src="' + results.sprites.front_default + '"></img>');
-		 	$('#types').text(results.types.map(function(value, i) {
+		 	$('#types').text(results.types.map(function(value, index) {
 				return value.type.name;
 			}));
 		 });
@@ -62,7 +62,7 @@ class PokeDex {
 // create a click event that adds pokemon to favorite list
 // var pokeDex = new PokeDex();
 
-$(function () {
+$(function() {
 	$('#favorite').on('click', function() {
 		if (pokeDex.addFav(name)){
 			$('#favorite').html(favorite_box);
