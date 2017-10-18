@@ -39,6 +39,6 @@ body {
 }
 
 .favorite_box {
-	position: relative;
+	position: static;
 	margin-top: 20%;
 }
