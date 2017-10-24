@@ -22,25 +22,20 @@ $(function() {
 	});
 
 	$('#favorite').on('click', function() {
-		if (pokeDex.addFav(name)){
-			$('#favorite').html(favorite_box);
-		}
+		pokeDex.addFav();
 	});
 
 	$('#unfavorite').on('click', function() {
-		if (pokeDex.removeFav(name)){
-			$('#unfavorite').html(favorite_box);	
-		}	
+		pokeDex.removeFav();
 	});
 
 });
 
-
-
 //creates a functionality similar to jukebox
 class PokeDex {
 	constructor() {
-		this.fav = []; 
+		this.fav = [];
+		this.currentPokemon = null; 
 	};
 
 	showDetails(name) {
@@ -49,6 +44,7 @@ class PokeDex {
 	 	.then(results => { 
 	 		console.log(results);
 			$('#name').text(results.name);
+			this.currentPokemon = results.name;
 			$('#id').text(results.id);
 			$('#weight').text(results.weight);
 			$('#height').text(results.height);
@@ -59,29 +55,32 @@ class PokeDex {
 		 });
 	};
 
-	addFav(name) {
-		this.fav.push(name);
+	addFav() {
+		this.fav.push(this.currentPokemon);
 		this.displayFavs();
 	}
 
-	removeFav(name) {
+	removeFav() {
 		for (var i = 0; i < this.fav.length; i++) {
-			if (this.fav[i].name === name) {
-				this.name.splice(i, 1);
+			if (this.fav[i] === this.currentPokemon) {
+				this.fav.splice(i, 1);
 			}				
 		}
 		this.displayFavs();
 	}	
 
-	// displayFavs(){
-
-	// }
+	displayFavs(){
+		var html = '';
+		for (var i = 0; i < this.fav.length; i++) {
+			html += `<div>${this.fav[i]}</div>`;
+		}
+		 $('.favorite_list').html(html);
+	}
 
 };
 
  
-// create a click event that adds pokemon to favorite list
-// var pokeDex = new PokeDex();
+
 
 
 

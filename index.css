@@ -5,27 +5,24 @@ body {
 
 #left_background {
 	background: lightgray;
-	height: 450px;
+	height: 600px;
 	width: 475px;
 	float: left;
 	border-radius: 15px;
-
 }
 
 #right_background {
 	background: lightgray;
 	float: right;
-	height: 450px;
+	height: 600px;
 	width: 475px;
 	border-radius: 15px;
 
 }
 
-
-
 .pokemon {
 	display: inline-block;
-	height: 440px;
+	height: 600px;
 	width: 465px;
 	overflow: scroll;
 	border-radius: 15px;
@@ -34,9 +31,10 @@ body {
 .child-pokemon:hover {
  	 color: yellow;
 }
-.child-pokemon:visited {
+
+/*.child-pokemon:visited {
   	text-decoration: underline;
-}
+}*/
 
 .favorite_box {
 	position: static;
