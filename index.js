@@ -23,19 +23,17 @@ $(function() {
 
 	$('#favorite').on('click', function() {
 		if (pokeDex.addFav(name)){
-			$('#favorite').html(favorite_box);
+			$('#favorite').html('.favorite');
 		}
 	});
 
 	$('#unfavorite').on('click', function() {
 		if (pokeDex.removeFav(name)){
-			$('#unfavorite').html(favorite_box);	
+			$('#unfavorite').html('.favorite');	
 		}	
 	});
 
 });
-
-
 
 //creates a functionality similar to jukebox
 class PokeDex {
@@ -73,15 +71,14 @@ class PokeDex {
 		this.displayFavs();
 	}	
 
-	// displayFavs(){
-
-	// }
+	displayFavs(name){
+		this.fav = displayFavs;
+	}
 
 };
 
  
-// create a click event that adds pokemon to favorite list
-// var pokeDex = new PokeDex();
+
 
 
 
